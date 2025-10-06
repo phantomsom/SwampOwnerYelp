@@ -12,19 +12,28 @@
             <h1>Welcome to SwampOwnerYelp.com!</h1>
             <p>Your Daily Push-Up Tracker for Big Daddy Shrek's Bi-Yearly Swamp Reviews!</p>
         </header>
-
+<section class="princesses">
+  <h2>Princess Push-Up Status</h2>
+  <ul id="princessStatusList"></ul>
+</section>
         <section class="tracker">
             <h2>Log Your Push-Ups</h2>
-            <form id="pushupForm">
-                <label for="pushups">How many push-ups did you do today?</label>
-                <input type="number" id="pushups" required min="0" placeholder="Enter number of push-ups">
-                <button type="submit">Submit</button>
-            </form>
-            <div id="statusMessage"></div>
-			<form id="notifyForm" action="https://formspree.io/f/mnngzlro" method="POST" style="display:none;">
-    <input type="hidden" name="message" value="Swamp review ready for Princess Jiona [For real this time]! She completed her push-ups! She totally didn't cheat!">
-    <button type="submit">📬 Submit for Swamp Review. Only click this if you're done and you’re ready to be judged by the daddy Shrek.</button>
+            
+<form id="pushupForm">
+  <label for="princessName">Princess Name:</label>
+  <input type="text" id="princessName" placeholder="Enter your princess name" required />
+
+  <label for="pushups">How many push-ups did you do today?</label>
+  <input type="number" id="pushups" min="0" placeholder="Enter number of push-ups" required />
+
+  <button type="submit">Submit</button>
 </form>
+           <div id="statusMessage"></div> 
+			
+	<form id="notifyForm" action="https://formspree.io/f/mnngzlro" method="POST" style="display:none;">
+    <input type="hidden" name="message" value="Swamp review ready for Princess Jiona [For real this time]! She completed her push-ups! She totally didn't cheat!">
+    <button type="submit"> Submit for Swamp Review. Only click this if you're done and you’re ready to be judged by the daddy Shrek.</button>
+	</form>
 
         </section>
 
@@ -37,24 +46,20 @@
 		<h1>Big Daddy Shrek is always watching. ;)</h1>
 		<img id="shrek" src="shrek.jpg" alt="Shrek's beautiful face">
 	<audio id="shrekSong" src="hey now.mp3"></audio>
+	  <audio id="fartSound" src="fart.mp3"></audio>
 	<button onclick="playSong()">Play Shrek Jam</button>
 	<button onclick="shrekWisdom()">Give me Shrek wisdom</button>
 <p id="quote"></p>
     </div>
 
     <script src="script.js"></script>
-</body>
-</html>
-
-
+	
 <script>
   function playSong() {
     const audio = document.getElementById("shrekSong");
     audio.volume = 0.2;
     audio.play();
   }
-</script>
-<script>
   document.addEventListener("mousemove", (e) => {
     const onion = document.createElement("img");
     onion.src = "onion.png"; // Add your own onion image
@@ -66,9 +71,7 @@
     document.body.appendChild(onion);
     setTimeout(() => onion.remove(), 100);
   });
-</script>
 
-<script>
   const quotes = [
     "Its definitely one of the driveways of all time.",
     "Ogres are like onions.",
@@ -84,3 +87,5 @@
     document.getElementById("quote").innerText = random;
   }
 </script>
+</body>
+</html>
