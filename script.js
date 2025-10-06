@@ -47,6 +47,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const dailyPushups = parseInt(pushupsInput.value);
+		if (isNaN(dailyPushups) || dailyPushups <= 0) {
+    statusMessage.textContent = "Please enter a valid number of push-ups.";
+    return;
+}
+
+if (dailyPushups > 20) {
+    statusMessage.textContent = "?? Max 20 push-ups per day! Don’t ogre-do it.";
+    return;
+}
+
         if (dailyPushups > 0) {
             totalPushups += dailyPushups;
             lastLoggedDate = today;
