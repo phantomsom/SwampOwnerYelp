@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!name || !princessData[name]) {
       totalPushupsDisplay.textContent = 0;
       pushupsRequiredDisplay.textContent = requiredForReview;
-      statusMessage.textContent = "Enter your name and log push-ups!";
+      statusMessage.textContent = "❗ Enter your name and log push-ups! ❗";
       return;
     }
 
@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const remaining = Math.max(0, requiredForReview - totalPushups);
     pushupsRequiredDisplay.textContent = remaining;
 
-    if (remaining === 0) {
-      statusMessage.innerHTML =
-        `<strong>?? Congrats, ${name}!</strong> You're eligible for the bi-yearly swamp review!`;
-      notifyForm.style.display = 'block'; // Show the form when eligible for review
-    } else {
-      statusMessage.textContent = `Only ${remaining} more push-ups to go, Princess ${name}!`;
+     if (remaining === 0) {
+  statusMessage.innerHTML =
+    `<strong>🎉 Congrats, ${name}! 👑</strong> You're eligible for the bi-yearly swamp review! 🐸💌`;
+  notifyForm.style.display = 'block';
+} else {
+      statusMessage.textContent = `Only ${remaining} more push-ups to go, Princess ${name}! 🌚🎯`;
       notifyForm.style.display = 'none'; // Hide the form until 100 push-ups
     }
   }
@@ -78,7 +78,7 @@ pushupsForm.addEventListener("submit", function (e) {
     return;
   }
   if (dailyPushups > 40) {
-    statusMessage.textContent = "?? Max 40 push-ups per day! Don�t ogre-do it.";
+    statusMessage.textContent = "🤚 Max 40 push-ups per day! Don’t ogre-do it.";
     return;
   }
 
@@ -89,7 +89,7 @@ pushupsForm.addEventListener("submit", function (e) {
   }
 
   if (princessData[name].lastLoggedDate === today) {
-    statusMessage.textContent = ` Princess ${name}, you�ve already logged push-ups today. Come back tomorrow!`;
+      statusMessage.textContent = `👀 Princess ${name}, you’ve already logged push-ups today. Come back tomorrow!`;
     return;
   }
 
@@ -106,7 +106,7 @@ pushupsForm.addEventListener("submit", function (e) {
   const message = `Swamp review ready for Princess ${name} [For real this time]! She completed her push-ups! She totally didn't cheat!`;
   notifyForm.querySelector('input[name="message"]').value = message;
 
-  statusMessage.textContent = `Logged successfully for today, Princess ${name}!`;
+  statusMessage.textContent = `💪 Logged successfully for today, Princess ${name}! 👑`;
   pushupsInput.value = "";
 });
 
@@ -140,3 +140,4 @@ pushupsForm.addEventListener("submit", function (e) {
   // For example, add this line after localStorage.setItem() in form submit:
   updatePrincessStatusList();
 });
+
