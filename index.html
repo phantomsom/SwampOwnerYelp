@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwampOwnerYelp - Daily Push-Up Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to SwampOwnerYelp.com!</h1>
+            <p>Your Daily Push-Up Tracker for Big Daddy Shrek's Bi-Yearly Swamp Reviews!</p>
+        </header>
+
+        <section class="tracker">
+            <h2>Log Your Push-Ups</h2>
+            <form id="pushupForm">
+                <label for="pushups">How many push-ups did you do today?</label>
+                <input type="number" id="pushups" required min="0" placeholder="Enter number of push-ups">
+                <button type="submit">Submit</button>
+            </form>
+            <div id="statusMessage"></div>
+			<form id="notifyForm" action="https://formspree.io/f/mnngzlro" method="POST" style="display:none;">
+    <input type="hidden" name="message" value="Swamp review ready for Princess Jiona! She completed her push-ups! She totally didn't cheat!">
+    <button type="submit">📬 Submit for Swamp Review. Only click this if you're done and you’re ready to be judged by the daddy Shrek.</button>
+</form>
+
+        </section>
+
+        <section class="review-status">
+            <h2>Your Swamp Eligibility</h2>
+            <p>Push-ups Needed for Review: <span id="pushupsRequired">0</span></p>
+            <p><strong>Current Total Push-Ups: <span id="totalPushups">0</span></strong></p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
