@@ -6,6 +6,7 @@
     <title>SwampOwnerYelp - Daily Push-Up Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<div id="shrek-bg"></div>
 <body>
     <div class="container">
         <header>
@@ -86,6 +87,39 @@
     const random = quotes[Math.floor(Math.random() * quotes.length)];
     document.getElementById("quote").innerText = random;
   }
+  
+   const shrekGifs = [
+    'shrek1.gif',
+    'shrek2.gif',
+    'shrek3.gif',
+    'shrek4.gif'
+    // Add as many as you downloaded
+  ];
+
+  const bg = document.getElementById('shrek-bg');
+
+  for (let i = 0; i < 20; i++) {
+    const gif = document.createElement('img');
+    gif.src = shrekGifs[Math.floor(Math.random() * shrekGifs.length)];
+    gif.classList.add('shrek-gif');
+    gif.style.left = Math.random() * 100 + 'vw';
+    gif.style.top = Math.random() * 100 + 'vh';
+    gif.style.animationDuration = (10 + Math.random() * 20) + 's';
+    gif.style.width = (60 + Math.random() * 80) + 'px';
+    bg.appendChild(gif);
+  }
+  
+   document.addEventListener("click", (e) => {
+    const gif = document.createElement("img");
+    gif.src = shrekGifs[Math.floor(Math.random() * shrekGifs.length)];
+    gif.style.position = "absolute";
+    gif.style.left = e.pageX + "px";
+    gif.style.top = e.pageY + "px";
+    gif.style.width = "80px";
+    gif.style.pointerEvents = "none";
+    document.body.appendChild(gif);
+    setTimeout(() => gif.remove(), 2000);
+  });
 </script>
 </body>
 </html>
